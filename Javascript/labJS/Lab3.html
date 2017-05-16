@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lab3</title>
+        <link rel="stylesheet" type ="text/css" href="Lab3.css">
+    </head>
+    <body>
+        
+        <!-- Canvas -->
+        <main>
+            <canvas id ="myCanvas" width="500" height="500">Canvas</canvas>
+            <div id="canvasMenu">
+                
+                <div id="cancelBtn"><p>Stop Drawing</p></div>
+                <div id="clearBtn"><p>Clear</p></div>
+                <div id="expJS"><p>Export JSON</p></div>
+                <div id="impJS"><p>Import JSON</p></div>
+
+            </div>
+        </main>
+        
+        <form>
+           <!-- Menu buttons -->
+            <input id="showStyleMenu" class="menueBtn" type="button" name="showStyleMenu" value="Show Style Menu"/>
+            
+            <div id="styleMenu">
+            <!-- Color picker menu -->
+            <label for="colorPicker">Color Picker</label>
+            <label for="newColor">New Color</label><br>
+            
+            <!-- Preset colors -->
+            <select id="colorPicker" name="colorPicker">
+                <option selected disabled hidden>Välj Färg</option>
+                <optgroup id="presetColors" label ="Colors">
+                    <option value="#F00">Red</option>
+                    <option value="#00F">Blue</option>
+                    <option value="#FF69B4">Pink</option>
+                    <option value="#000">Black</option>
+                    <option value="#228B22">Green</option>
+                    <option value="#FFD700">Yellow</option>
+                </optgroup >
+                
+            </select>
+            
+            <!-- pick new color -->
+            <input id="newColor" type="text" name="newColor" placeholder="#000000 or #000"/>
+            <input id="addColor" type="button" name="addColor" value="Add Color" disabled /><br>
+            
+            <!-- select shape -->
+            <label>Draw Shape</label><br>
+    
+            <input id="rectShape" class="shapes" type="button" name="rectangleBtn" value="Rectangle"/>
+            <input id="circleShape" class="shapes" type="button" name="circleBtn" value="Circle"/><br>
+            <input id="triShape" class="shapes" type="button" name="triangleBtn" value="Triangle"/>
+            <input id="polyShape" class="shapes" type="button" name="polygonBtn" value="Polygon"/>
+            </div>
+        </form>
+          
+        <!-- status bar -->
+        <div id="statusBar">
+            <p id="instruct"></p>
+            <p id="status"></p>
+        </div>
+        
+        <form >
+            <h3>JSON</h3>
+            <textarea id="JSON" rows="10" cols="110"></textarea>
+        </form>
+           
+       
+            
+                
+        
+        
+
+       
+        <script src="Lab3.js"></script>
+    </body>
+</html>

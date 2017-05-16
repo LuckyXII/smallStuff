@@ -1,0 +1,154 @@
+main{
+    display:inline-block;
+    position:relative;
+}
+
+#myCanvas{
+    width:500px; height:500px;
+    display:inline-block;
+    position:relative;
+    background-color: #EEE;
+    border:1px solid gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    cursor:crosshair;
+    
+}
+
+#canvasMenu{
+    display:block;
+    position: relative;
+    border:1px solid gray;
+    margin-left: 50px;
+    width:500px;
+    height:50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right:50px;
+    background-color:#EEE;
+    
+}
+
+#canvasMenu div{
+    display:inline-block;
+    background-color: #E5E5E5;
+    border: 1px solid gray;
+    margin:auto;
+    width:23.5%;
+    height:48px;
+    cursor: pointer;
+}
+
+#canvasMenu :first-child{
+    border-bottom-left-radius: 10px;
+    margin-left:5px;
+} 
+#canvasMenu :last-child{
+    border-bottom-right-radius: 10px;
+}
+
+#canvasMenu div > p{
+    text-align: center;
+    color:gray;
+    font-family: sans-serif;
+    font-weight: bold;
+    
+}
+
+#showStyleMenu{
+    display: inline-block;
+    width:250px;
+    top:60px;  
+    cursor: pointer;
+}
+
+main + form{
+    display:inline;
+    position:absolute;
+    top:60px;
+}
+
+#styleMenu{
+    display:none;
+}
+
+label{
+    display:inline-block;
+    margin-top:10px; margin-left:10px; margin-right:10px;
+}
+
+select{
+    margin-left:10px; margin-right:25px;
+}
+
+#addColor, #newColor, select, .shapes{
+    cursor:pointer;
+}
+
+#colorPicker :first-child{
+    font-weight: bold;
+}
+
+#presetColors :first-child{
+    color:red;
+    font-weight: bold;
+}
+#presetColors :nth-child(2){
+    color:blue;
+    font-weight: bold;
+}
+#presetColors :nth-child(3){
+    color:hotpink;
+    font-weight: bold;
+}
+#presetColors :nth-child(4){
+    color:black;
+    font-weight: bold;
+}
+#presetColors :nth-child(5){
+    color:forestgreen;
+    font-weight: bold;
+}
+#presetColors :nth-child(6){
+    color:gold;
+    font-weight: bold;
+}
+.shapes{
+    margin-left:10px;
+}
+
+#statusBar{
+    display:inline-block;
+    position:fixed;
+    border:1px solid lightGray;
+    background-color: #EEE;
+    width:250px;
+    height:180px;
+    top: 434px;
+    border-radius: 5px;
+}
+
+h3{
+    margin-top:20px;
+    margin-left: 50px;
+    margin-bottom: 0px;
+}
+
+#JSON{
+    display:block;
+    margin-left:50px;
+    
+}
+
+
+
+
+
+
+
+
+
+

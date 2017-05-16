@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>VG4DOM</title>
+        <link rel="stylesheet" type="text/css" href="VG4.1DOM.css">
+    </head>
+    <body>
+
+
+        <h3>Time for some DOM manipulation!</h3>
+        <p>First, find the element with id="first" using document.getElementById. Next, change its content. Use the property innerHTML.<br>
+        <span id="first" style="border: 1px dotted red;">id=first</span>
+        </p>
+        <hr>
+        <p>Excellent work so far! (probably) Now change the background color of the unordered list below. Try getElementsByTagName. You will need to modify the style property.<br><br>When you're done, remove the last element of the list. Use removeChild.
+        </p>
+        <ul style="background-color: hotpink;"> 
+        <li>Regrettable choice</li> 
+        <li>of background color</li>
+        <li id="removeMe">Remove me</li>
+        </ul>
+        <hr>
+        <p>Now modify the table below, so that every cell with the class "prime" is styled bold. Use getElementsByClassName. <br>
+        </p>
+        <table>
+        <tr> <td class="prime">2</td> <td class="prime">3</td> <td>4</td> </tr>
+        <tr> <td class="prime">5</td> <td>6</td> <td class="prime">7</td> </tr>
+        <tr> <td>8</td> <td>9</td> <td>10</td> </tr>
+        </table>
+        <p>Finally, add a row to the table with new cells. Use createElement and appendChild.
+        </p>
+        <hr>
+        <p>
+          <u>VG</u>: Complete the list of best pets below. You need to add at least two more items, using JavaScript.
+          If your favourite pet isn't cats, you need to remove it or replace it with another. Each item should not be
+          plain text, but instead a radio button. Use <span style="font-weight: bold;">label</span> to make the text
+          clickable. The user should only be able to select one of the pets. <br>
+          Hint: <span style="color: white;">the   name attribute of a radio button controls if they are grouped together or not</span>.
+        </p>
+        <ol>
+          <li>(o) Cats</li>
+        </ol>
+        <script src="VG4.1DOM.js"></script>
+    </body>
+</html>
