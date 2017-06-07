@@ -6,26 +6,19 @@ const initialState = {
         age: undefined,
         "riskClass":null
     }*/,
-    "accounts":[
-        /*{
-            "accountName":undefined,
-            "accountNr":undefined,
-            "balance":null,
-            "interest":undefined,
-            "credit":null,
-            "sharedWith":[]
-        },
-        {
-            "accountName":"savings",
-            "accountNr":009887326736,
-            "balance":1337,
-            "interest":0.05,
-            "credit":0,
-            "sharedWith":[]
-        }*/
-    ],
-    "invoices":[
-        /*{
+    "accounts":{/*
+        009887326736:
+            {
+                "accountName":"savings",
+                "accountNr":009887326736,
+                "balance":1337,
+                "interest":0.05,
+                "credit":0,
+                "sharedWith":[]
+            }*/
+    },
+    "invoices":{
+        /*123456789:{
             "type":"electronic",
             "OCR":123456789,
             "BG":1234-5467,
@@ -33,7 +26,7 @@ const initialState = {
             "isPaid":true,
             "due": 123456
         },
-        {
+        987654321:{
             "type":"auto",
             "OCR":987654321,
             "BG":7654-4321,
@@ -42,9 +35,9 @@ const initialState = {
             "due": 123456
         }
         */
-    ],
-    "transactions":[
-        /*{
+    },
+    "transactions":{
+        /*127631876:{
             "sender":{
                 "userOwned":true,
                 "accountNumber":123456789
@@ -57,7 +50,7 @@ const initialState = {
             "date":123456,
             "status":"pending"
         }*/
-    ]
+    }
     
 };
 
@@ -140,19 +133,19 @@ function reducer(action, state = initialState) {
         case 'DEPOSIT':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.accounts.push( action.account);
+            newstate.accounts = action.account;
             return newstate;
 
         case 'WITHDRAW':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.accounts.push( action.account);
+            newstate.accounts = action.account;
             return newstate;
             
         case 'TRANSFER_FUNDS':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.transactions.push(action.transactions);
+            newstate.transactions = action.transactions;
             return newstate;
             
         case 'OPEN_NEW_ACCOUNT':
@@ -164,16 +157,13 @@ function reducer(action, state = initialState) {
         case 'CLOSE_ACCOUNT':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.accounts = newstate.accounts.map((account)=>{
-                return account.accountNr !== action.accountNr;
-            });
+            delete newstate.accounts[action.accountNr];
+            return newstate; 
             
-            newstate.accounts = null;
-            return newstate;    
         case 'GET_INVOICE':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.invoices.push(action.invoices);
+            newstate.invoices = action.invoices;
             return newstate;
         default:
             return Object.assign({}, state);
