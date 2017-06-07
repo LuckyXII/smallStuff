@@ -1,0 +1,53 @@
+/*First div to act as a container for the images*/
+body,html{
+    height: 100%;
+}
+
+
+#box img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+#box img:first-child {
+    -webkit-clip-path: polygon(0 0, 0 100vh, 100% 100vh);
+    clip-path: polygon(100% 0, 0 100vh, 100% 100vh);
+    background: #d6d6d6;
+}
+
+#box img:last-child {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100vh);
+    clip-path: polygon(0 0, 0 100vh, 100% 0 );
+    background: #212121;
+}
+
+.para img {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+.para img:first-child {
+    -webkit-clip-path: polygon(0 0, 0 100vh, 100% 100vh);
+    clip-path: polygon(0 0, 0 100vh, 100% 100vh);
+    background: #d6d6d6;
+}
+
+
+.para2 img {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    top: 200vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100vh);
+    clip-path: polygon(0 0, 100% 0, 100% 100vh);
+}

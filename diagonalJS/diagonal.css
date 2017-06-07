@@ -1,0 +1,28 @@
+/*First div to act as a container for the images*/
+#box{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+#box > img{
+    width: 100%;
+}
+/*Rotate this div and position it to cut the rectangle in half*/
+#image2{
+    transform-origin: 50% 50% ;
+    position: absolute;
+    top: -230px;
+    left: -349px;
+    overflow: hidden;
+
+}
+/*Apply exact opposite amount of rotation to the .image2 class so image appears straight */
+/*Also align it with the top of the rectangle*/
+#image2 img{
+    height: auto;
+    position: absolute;
+    top: -220px;
+    left: 10px;
+}
