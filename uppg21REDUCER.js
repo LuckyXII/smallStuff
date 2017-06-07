@@ -140,19 +140,19 @@ function reducer(action, state = initialState) {
         case 'DEPOSIT':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.accounts = action.account;
+            newstate.accounts.push( action.account);
             return newstate;
 
         case 'WITHDRAW':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.accounts = action.account;
+            newstate.accounts.push( action.account);
             return newstate;
             
         case 'TRANSFER_FUNDS':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.transactions = action.transactions;
+            newstate.transactions.push(action.transactions);
             return newstate;
             
         case 'OPEN_NEW_ACCOUNT':
@@ -164,14 +164,18 @@ function reducer(action, state = initialState) {
         case 'CLOSE_ACCOUNT':
             let newstate = Object.assign({}, state);
             //has own property check
+            newstate.accounts = newstate.accounts.map((account)=>{
+                return account.accountNr !== action.accountNr;
+            });
+            
             newstate.accounts = null;
             return newstate;    
         case 'GET_INVOICE':
             let newstate = Object.assign({}, state);
             //has own property check
-            newstate.invoices = action.invoices;
+            newstate.invoices.push(action.invoices);
             return newstate;
         default:
-            throw new Error("Action not found");
+            return Object.assign({}, state);
     }
 }
